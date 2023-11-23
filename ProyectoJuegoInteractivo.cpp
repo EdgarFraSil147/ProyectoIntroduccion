@@ -990,7 +990,6 @@ int main(){
 							} 
 						}	//finalizacion de las opciones de botanico
 						if(clase == "Curandero"){ //Inicio de opciones de Curandero
-							cout<<"Oso mutante\n[Vida del monstruo: "<<vidaMonstruo<<"HP]\nAtaque normal 8 ATK\nAtaque fuerte 12 ATK\n\n[Vida: "<<vida<<"HP]\t[Defensa: "<<defensa<<"DP]\t[Dinero: "<<dinero<<"]\n"<<endl;
 							cout<<"1: Enviar a un aliado a atacar\n2: Curar - +12 HP\n3: Intentar huir\n4: Salir al menu principal\n"<<endl;
 							cin>>opcion;
 							system("cls");
