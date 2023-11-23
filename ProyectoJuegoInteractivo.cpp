@@ -877,8 +877,10 @@ int main(){
 												vidaMonstruo = vidaMonstruo - ataque;
 												ataque = ataque - 3;
 											}
-											cout<<"La bestia ha perdido "<<ataque<<" HP\n"<<endl;
-											vidaMonstruo = vidaMonstruo - ataque;
+											else{
+												cout<<"La bestia ha perdido "<<ataque<<" HP\n"<<endl;
+												vidaMonstruo = vidaMonstruo - ataque;
+											}
 											system("pause");
 											system("cls");
 											break;
@@ -892,8 +894,10 @@ int main(){
 												vidaMonstruo = vidaMonstruo - ataque;
 												ataque = ataque - 3;
 											}
-											cout<<"La bestia ha perdido "<<ataque<<" HP\n"<<endl;
-											vidaMonstruo = vidaMonstruo - ataque;
+											else{
+												cout<<"La bestia ha perdido "<<ataque<<" HP\n"<<endl;
+												vidaMonstruo = vidaMonstruo - ataque;
+											}
 											system("pause");
 											system("cls");
 											break;
@@ -907,8 +911,10 @@ int main(){
 												vidaMonstruo = vidaMonstruo - ataque;
 												ataque = ataque - 3;
 											}
-											cout<<"La bestia ha perdido "<<ataque<<" HP\n"<<endl;
-											vidaMonstruo = vidaMonstruo - ataque;
+											else{
+												cout<<"La bestia ha perdido "<<ataque<<" HP\n"<<endl;
+												vidaMonstruo = vidaMonstruo - ataque;
+											}
 											system("pause");
 											system("cls");
 											break;
@@ -925,7 +931,7 @@ int main(){
 									break;
 								case 2: //Opcion de Apoyo
 									cout<<"Oso mutante\n[Vida del monstruo: "<<vidaMonstruo<<"HP]\nAtaque normal 8 ATK\nAtaque fuerte 12 ATK\n\n[Vida: "<<vida<<"HP]\t[Defensa: "<<defensa<<"DP]\t[Dinero: "<<dinero<<"]\n"<<endl;
-									cout<<"1: Aumentar daño - +3 ATK\n2: Curar - +7 HP3: Volver\n"<<endl;
+									cout<<"1: Aumentar daño - +3 ATK\n2: Curar - +7 HP\n3: Volver\n"<<endl;
 									cin>>opcion2;
 									system("cls");
 									
@@ -963,6 +969,7 @@ int main(){
 											system("cls");
 											break;
 									}
+									break;
 								case 3:
 									cout<<"Oso mutante\n[Vida del monstruo: "<<vidaMonstruo<<"HP]\nAtaque normal 8 ATK\nAtaque fuerte 12 ATK\n\n[Vida: "<<vida<<"HP]\t[Defensa: "<<defensa<<"DP]\t[Dinero: "<<dinero<<"]\n"<<endl;
 									cout<<"Sugieres la huida, pero no parece que la bestia piense en dejarlos ir y\ntu grupo está muy inspirado como para hacerlo.\n"<<endl;
@@ -986,6 +993,7 @@ int main(){
 							cout<<"Oso mutante\n[Vida del monstruo: "<<vidaMonstruo<<"HP]\nAtaque normal 8 ATK\nAtaque fuerte 12 ATK\n\n[Vida: "<<vida<<"HP]\t[Defensa: "<<defensa<<"DP]\t[Dinero: "<<dinero<<"]\n"<<endl;
 							cout<<"1: Enviar a un aliado a atacar\n2: Curar - +12 HP\n3: Intentar huir\n4: Salir al menu principal\n"<<endl;
 							cin>>opcion;
+							system("cls");
 							
 							switch(opcion){
 								case 1: //Opcion de ataque
