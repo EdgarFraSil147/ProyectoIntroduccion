@@ -810,7 +810,7 @@ int main(){
 											break;
 										case 2: //Opcion de recuperacion de vida
 											cout<<"Oso mutante\n[Vida del monstruo: "<<vidaMonstruo<<"HP]\nAtaque normal 8 ATK\nAtaque fuerte 12 ATK\n\n[Vida: "<<vida<<"HP]\t[Defensa: "<<defensa<<"DP]\t[Dinero: "<<dinero<<"]\n"<<endl;
-											if(vida <= 125){
+											if(vida < 125){
 												vida = vida + 5;
 												if(vida>125){
 													vida = 125;
@@ -873,8 +873,11 @@ int main(){
 											ataque = 15;
 											if(apoyo == 1){
 												ataque = ataque + 3;
+												cout<<"La bestia ha perdido "<<ataque<<" HP\n"<<endl;
+												vidaMonstruo = vidaMonstruo - ataque;
+												ataque = ataque - 3;
 											}
-											cout<<"La bestia ha perdido 15 HP\n"<<endl;
+											cout<<"La bestia ha perdido "<<ataque<<" HP\n"<<endl;
 											vidaMonstruo = vidaMonstruo - ataque;
 											system("pause");
 											system("cls");
@@ -885,8 +888,11 @@ int main(){
 											ataque = 20;
 											if(apoyo == 1){
 												ataque = ataque + 3;
+												cout<<"La bestia ha perdido "<<ataque<<" HP\n"<<endl;
+												vidaMonstruo = vidaMonstruo - ataque;
+												ataque = ataque - 3;
 											}
-											cout<<"La bestia ha perdido 20 HP\n"<<endl;
+											cout<<"La bestia ha perdido "<<ataque<<" HP\n"<<endl;
 											vidaMonstruo = vidaMonstruo - ataque;
 											system("pause");
 											system("cls");
@@ -897,6 +903,9 @@ int main(){
 											ataque = 8;
 											if(apoyo == 1){
 												ataque = ataque + 3;
+												cout<<"La bestia ha perdido "<<ataque<<" HP\n"<<endl;
+												vidaMonstruo = vidaMonstruo - ataque;
+												ataque = ataque - 3;
 											}
 											cout<<"La bestia ha perdido "<<ataque<<" HP\n"<<endl;
 											vidaMonstruo = vidaMonstruo - ataque;
@@ -931,7 +940,7 @@ int main(){
 											break;
 										case 2: //Opcion de recuperacion de vida
 											cout<<"Oso mutante\n[Vida del monstruo: "<<vidaMonstruo<<"HP]\nAtaque normal 8 ATK\nAtaque fuerte 12 ATK\n\n[Vida: "<<vida<<"HP]\t[Defensa: "<<defensa<<"DP]\t[Dinero: "<<dinero<<"]\n"<<endl;
-											if(vida <= 110){
+											if(vida < 110){
 												vida = vida + 7;
 												if(vida>110){
 													vida = 110;
@@ -974,7 +983,88 @@ int main(){
 							} 
 						}	//finalizacion de las opciones de botanico
 						if(clase == "Curandero"){ //Inicio de opciones de Curandero
+							cout<<"Oso mutante\n[Vida del monstruo: "<<vidaMonstruo<<"HP]\nAtaque normal 8 ATK\nAtaque fuerte 12 ATK\n\n[Vida: "<<vida<<"HP]\t[Defensa: "<<defensa<<"DP]\t[Dinero: "<<dinero<<"]\n"<<endl;
+							cout<<"1: Enviar a un aliado a atacar\n2: Curar - +12 HP\n3: Intentar huir\n4: Salir al menu principal\n"<<endl;
+							cin>>opcion;
 							
+							switch(opcion){
+								case 1: //Opcion de ataque
+									cout<<"Oso mutante\n[Vida del monstruo: "<<vidaMonstruo<<"HP]\nAtaque normal 8 ATK\nAtaque fuerte 12 ATK\n\n[Vida: "<<vida<<"HP]\t[Defensa: "<<defensa<<"DP]\t[Dinero: "<<dinero<<"]\n"<<endl;
+									cout<<"1: Julius - 15 ATK\n2: Frederick - 20 ATK\n3: Erick 8 ATK\n4: Volver\n"<<endl;
+									cin>>opcion2; // Se elige al atacante
+									system("cls");
+									if(opcion2==4){
+										opcion = 0;
+									}
+									switch(opcion2){
+										case 1: //Opcion de Julius
+											cout<<"Julius se avalanza contra la bestia, realiza un rapido movimiento con su\ngran espada y golpea a la bestia.\n"<<endl;
+											cout<<"La bestia ha perdido 15 HP\n"<<endl;
+											vidaMonstruo = vidaMonstruo - 15;
+											system("pause");
+											system("cls");
+											break;
+										case 2: //Opcion de Frederick
+											cout<<"Frederick esquiva los ataques de la bestia y logra conectar un fuerte\ngolpe con su mazo, la bestia quedo confundida un momento pero esta"<<endl;
+											cout<<"lista para continuar\n"<<endl;
+											cout<<"La bestia ha perdido 20 HP\n"<<endl;
+											vidaMonstruo = vidaMonstruo - 20;
+											system("pause");
+											system("cls");
+											break;
+										case 3: //Opcion de Erick
+											cout<<"Erick toma rapidamente su arco y flecha, carga y dispara.\n"<<endl;
+											cout<<"Parece que la piel de la bestia está bastante blindada\n"<<endl;
+											cout<<"La bestia ha perdido 8 HP\n"<<endl;
+											vidaMonstruo = vidaMonstruo - 8;
+											system("pause");
+											system("cls");
+											break;
+										case 4: //Volver al menu anterior
+											system("cls");
+											break;
+										default: //Opcion de descarte
+											cout<<"Esa opcion no es posible, elige otra\n"<<endl;
+											system("pause");
+											system("cls");
+											opcion = 0;
+											break;
+									}
+									break;
+								case 2: //Opcion de curacion
+									if(vida < 110){
+										vida = vida + 12;
+										if(vida>110){
+											vida = 110;
+										}
+										cout<<"Con la botarga bien puesta, te echas un cumbion bien sabroso que por el poder de\nlos precios bajos mágicamente curas a tus compañeros\n"<<endl;
+										cout<<"El grupo se ha curado 12 HP\n"<<endl;
+										opcion = 1;
+									}
+									else{
+										cout<<"Tu equipo tiene vida completa\n"<<endl;
+									}
+									system("pause");
+									system("cls");
+									break;
+								case 3: //Opcion de huida
+									cout<<"Oso mutante\n[Vida del monstruo: "<<vidaMonstruo<<"HP]\nAtaque normal 8 ATK\nAtaque fuerte 12 ATK\n\n[Vida: "<<vida<<"HP]\t[Defensa: "<<defensa<<"DP]\t[Dinero: "<<dinero<<"]\n"<<endl;
+									cout<<"Sugieres la huida, pero no parece que la bestia piense en dejarlos ir y\ntu grupo está muy inspirado como para hacerlo.\n"<<endl;
+									cout<<"Huida fallida\n"<<endl;
+									system("pause");
+									system("cls");
+									break;
+								case 4: //Regreso al menu principal
+									cout<<"Estas seguro de salir?\nEl progreso no quedara guardado\n\n0:No, quiero volver\n1:Si, quiero salir al menu\n"<<endl;
+									cin>>salida;
+									system("cls");
+									break;
+								default: //Opcion de descarte
+									cout<<"Esa opcion no es posible, elige otra\n"<<endl;
+									system("pause");
+									system("cls");
+									break;
+							}
 						} //Finalizacion de las opciones de curandero
 						if(salida==1){ //proceso de salida al menu
 							break;
@@ -984,13 +1074,60 @@ int main(){
 					if(salida == 1){ //proceso de salida al menu
 						break;
 					}
+					apoyo = 0;
+					if(vidaMonstruo > 0){ //Inicio del turno del monstruo
+						cout<<"Tu turno ha terminado\n\nLa bestia esta lista para atacar!\n"<<endl;
+						system("pause");
+						system("cls");
+						ataqueMonstruo=AtaqueAleatorio();
+						if(ataqueMonstruo>5){
+							cout<<"La bestia toma carrera y embiste contra el grupo hasta chocar (eso si\nque debe doler)\n"<<endl;
+							ataqueMonstruo = 12 - defensa;
+							cout<<"El grupo ha perdido "<<ataqueMonstruo<<" HP\n"<<endl;
+							vida = vida - ataqueMonstruo;
+						}
+						else{
+							cout<<"La bestia encesta un golpe de arriba hacia abajo contra el grupo\n"<<endl;
+							ataqueMonstruo = 8 - defensa;
+							cout<<"El grupo ha perdido "<<ataqueMonstruo<<" HP\n"<<endl;
+							vida = vida - ataqueMonstruo;
+						}
+						system("pause");
+						system("cls");
+					}
+					if(clase == "Escudero"){ //Se desactiva la defensa previa del escudero
+						if(defensa > 4){
+							defensa = defensa - 3;
+						}
+					}
 				}
 				while(vidaMonstruo > 0 && vida > 0); //Fin de la fase de batalla
 				if(salida == 1){
 					salida = 0;
 					break;
 				}
-				break;
+				if(vida <= 0){ //Final Game Over
+					cout<<"A pesar de sus grandes esfuerzos, esa bestia era demasiado fuerte para\nser derrotada, el grupo ha perecido en el olvido y la ciudad arrasada por"<<endl;
+					cout<<"Uvlius el inmortal.\n"<<endl;
+					cout<<"Volviendo al menu principal\n"<<endl;
+					system("pause");
+					system("cls");
+				}
+				else{ //Final exitoso
+					cout<<"Luego de una dura batalla, el equipo salio victorioso y listo para mas.\nFelicidades por tan buena coordinacion!\n"<<endl;
+					cout<<"Has obtenido 25 monedas de oro\n"<<endl;
+					dinero = dinero + 25;
+					system("pause");
+					system("cls");
+					cout<<"Una vez que el grupo derroto a la bestia, el grupo sano sus heridas y se\npreparo para continuar, despues de aquella experiencia, era mas que"<<endl;
+					cout<<"claro que estaban cerca de su destino y pronto conocerian lo que este\nalbergaba.\n"<<endl;
+					system("pause");
+					system("cls");
+					cout<<"Gracias por jugar la version Demo de THE ORDER OF UVLIUS THE\nINMORTAL, proximamente estara disponible la version completa\n"<<endl;
+					system("pause");
+					system("cls");
+				}
+				break; //Fin del juego
 				
 			case 2: //instrucciones para jugar
 				cout<<"Bienvenido a THE ORDER OF UVLIUS THE INMORTAL, en este juego\nencontraras diferentes puntos de la historia en donde tengas que"<<endl;
